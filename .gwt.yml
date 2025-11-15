@@ -1,0 +1,20 @@
+# git-worktree-sync configuration file
+# This is a sample configuration for a Go project
+
+resources:
+  # Resources to sync via symlink
+  symlink:
+    - vendor
+
+  # Resources to copy
+  copy:
+    - .env
+
+# Worktree creation path template
+# {branch} will be replaced with the branch name
+worktree_path: "../{branch}"
+
+# Exclude patterns (glob supported)
+exclude:
+  - "*.log"
+  - "tmp/*"
